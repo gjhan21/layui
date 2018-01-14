@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/layui.css">
+    <link rel="script" href="../layui.js">
+    <title>无标题文档</title>
+</head>
+
+<body>
+<div class="layui-container">
+    <form class="layui-form">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">订单编号：</label>
+                <div class="layui-input-inline">
+                    <input class="layui-input" type="text" name="title" lay-verify="title" autocomplete="off" placeholder="订单编号">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">用户名：</label>
+                <div class="layui-input-inline">
+                    <input class="layui-input" type="text" name="title" lay-verify="title" autocomplete="off" placeholder="订单编号">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">交易时间：</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input" id="test1" placeholder="yyyy-MM-dd">
+                </div>
+            </div>
+        </div>
+        <table class="layui-table">
+            <tr>
+                <td><label class="layui-form-label">订单编号：</label></td>
+                <td><input class="layui-input" type="text" name="title" lay-verify="title" autocomplete="off" placeholder="订单编号"></td>
+                <td><label class="layui-form-label">用户名：</label></td>
+                <td><input class="layui-input" type="text" name="title" lay-verify="title" autocomplete="off" placeholder="订单编号"></td>
+                <td><label class="layui-form-label">交易时间：</label></td>
+                <td><input type="text" class="layui-input" id="test1" placeholder="yyyy-MM-dd"></td>
+            </tr>
+            <tr>
+                <td><label class="layui-form-label">订单类型：</label></td>
+                <td>
+                    <select id="ostyle" class="layui-form-select" name="ostyle">
+                        <option value="">默认不选</option>
+                        <option value="0">买涨</option>
+                        <option value="1">买跌</option>
+                    </select>
+                </td>
+                <td><label class="layui-form-label">订单盈亏：</label></td>
+                <td>
+                    <select id="ploss" class="layui-form-select" name="ostyle">
+                        <option value="">默认不选</option>
+                        <option value="0">盈利</option>
+                        <option value="1">亏损</option>
+                    </select>
+                </td>
+                <td><label class="layui-form-label">订单状态：</label></td>
+                <td>
+                    <select id="ostaus" class="layui-form-select" name="ostyle">
+                        <option value="">默认不选</option>
+                        <option value="0">建仓</option>
+                        <option value="1">平仓</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div class="layui-row">
+        <div class="layui-col-md2">
+            <a href="../index/index.html"> <button onclick="location.href" class="layui-btn">添加分类</button></a>
+        </div>
+        <div class="layui-col-md3">
+            <a href="../index/index.html"> <button onclick="location.href" class="layui-btn">添加商品</button></a>
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <table class="layui-table" lay-data="{height:500, url:'../test/user.html', page:true, id:'idTest'}" lay-filter="demo">
+                <thead>
+                <tr>
+                    <th lay-data="{field:'id', sort: true, fixed: true}">编号</th>
+                    <th lay-data="{field:'username',}">产品名称</th>
+                    <th lay-data="{field:'sex', sort: true}">价格/手</th>
+                    <th lay-data="{field:'id', sort: true, fixed: true}">浮动盈亏</th>
+                    <th lay-data="{field:'username',}">手续费</th>
+                    <th lay-data="{field:'sex', sort: true}">外盘价</th>
+                    <th lay-data="{field:'id', sort: true, fixed: true}">所属分类</th>
+                    <th lay-data="{field:'username',}">点差x</th>
+                    <th lay-data="{field:'sex', sort: true}">点差-</th>
+                    <th lay-data="{fixed: 'right', width:178, align:'center', toolbar: '#barDemo'}"></th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script src="../layui.js"></script>
+<script>
+    layui.use(['table','laydate'], function(){
+        var table = layui.table
+            ,laydate = layui.laydate;
+        laydate.render({
+            elem:'#test1'
+        });
+    });
+</script>
+</body>
+</html>
